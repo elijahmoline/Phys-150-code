@@ -1,0 +1,14 @@
+# Write your code here :-)
+from adafruit_circuitplayground import cp
+import time
+import math
+
+cp.pixels.brightness = .05
+
+
+while True:
+    x, y, z = cp.acceleration
+    theta = math.asin(z/(math.sqrt(x ** 2 + y ** 2+ z**2)))
+    d=theta*180/math.pi
+    print(d)
+    time.sleep(.05)
