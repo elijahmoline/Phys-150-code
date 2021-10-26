@@ -12,13 +12,11 @@ seven = (127,0,255) #violet
 eight = (128,128,128)#grey
 nine = (255,255,255)#white
 
-
-num = x+1000000
-
-ones = num%1000000
-tens = num%100000
-hundreds = num%10000
-thousands = num%1000
+ones = (num)%10
+tens = (num/10)%10
+hundreds = (num/100)%10
+thousands = (num/1000)%10
+tenthousands = (num/10000)%10
 
 if i = 0:
     x=(zero)
@@ -44,3 +42,16 @@ if i = 9:
 for i in range 10:
     if ones = i:
         cp.pixels[0]=x
+for i in range 10:
+    if tens = i:
+        cp.pixels[1]=x
+for i in range 10:
+    if hundreds = i:
+        cp.pixels[2]=x
+for i in range 10:
+    if thousands = i:
+        cp.pixels[3]=x
+for i in range 10:
+    if tenthousands = i:
+        cp.pixels[4]=x
+
