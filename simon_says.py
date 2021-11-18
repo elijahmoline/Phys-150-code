@@ -42,7 +42,12 @@ while True:
                 cp.pixels[4] = ((255, 255, 0))
                 cp.play_tone(288, 1)
             
-            if (((cp.touch_A1 & game[k] == 0) | ((cp.touch_A2 | cp.touch_A3) & game[k] == 1) | ((cp.touch_A4 | cp.touch_A5) & game[k] == 2) | ((cp.touch_A6 | cp.touch_TX) & game[k] == 3)) != TRUE):
+            if (((cp.touch_A1 & game[k] == 0) | ((cp.touch_A2 | cp.touch_A3) & game[k] == 1) | ((cp.touch_A4 | cp.touch_A5) & game[k] == 2) | ((cp.touch_A6 | cp.touch_TX) & game[k] == 3))):
+                print()
+            else:
+                cp.pixels.fill(255, 0, 0)
+                cp.pixels.fill(0, 0, 0)
+                cp.pixels.fill(255, 0, 0)
                 cp.play_tone(266, 1)
                 cp.play_tone(300, 1)
 
