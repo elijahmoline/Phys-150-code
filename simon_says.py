@@ -3,16 +3,14 @@
 
 import time
 import random
-import numpy
 from adafruit_circuitplayground import cp
 
 cp.pixels.brightness = 0.1
-game = numpy.zeros((1, 9))
+game = 10*[0]
 num = 0
 
 for i in range(9):                      # generate an array of 10 numbers 0-3
     num = random.randrange(0, 3, 1)
-    print(num)
     game[i] = num
     
 while True:
@@ -44,9 +42,7 @@ while True:
                 cp.pixels[4] = ((255, 255, 0))
                 cp.play_tone(288, 1)
             
-            if ((cp.touch_A1 & game[k] == 0) | ((cp.touch_A2 | cp.touch_A3) & game[k] == 1) | ((cp.touch_A4 | cp.touch_A5) & game[k] == 2) | ((cp.touch_A6 | cp.touch_TX) & game[k] == 3)):
-                
-            else:
+            if (((cp.touch_A1 & game[k] == 0) | ((cp.touch_A2 | cp.touch_A3) & game[k] == 1) | ((cp.touch_A4 | cp.touch_A5) & game[k] == 2) | ((cp.touch_A6 | cp.touch_TX) & game[k] == 3)) != TRUE):
                 cp.play_tone(266, 1)
                 cp.play_tone(300, 1)
 
